@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Androidify Music</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="player-container">
+    <div class="header">
+      <h1>My Music</h1>
+      <img src="add.png" alt="Add" class="icon" id="addMusic" />
+    </div>
+
+    <div class="album-art">
+      <img src="androidify.png" alt="Album Art" />
+    </div>
+
+    <div class="controls">
+      <audio id="audioPlayer" controls hidden></audio>
+      <img src="play.png" alt="Play" id="playBtn" class="icon" />
+      <img src="pause.png" alt="Pause" id="pauseBtn" class="icon hidden" />
+      <img src="repeat.png" alt="Repeat" class="icon" id="repeatBtn" />
+      <img src="autoplay.png" alt="Autoplay" class="icon" id="autoplayBtn" />
+      <img src="autotranslate.png" alt="Translate" class="icon" />
+      <img src="option.png" alt="Options" class="icon" />
+    </div>
+
+    <div class="progress-bar">
+      <img src="processbar.png" alt="Progress" />
+      <img src="processdot.png" alt="Dot" id="progressDot" />
+    </div>
+
+    <input type="file" id="fileInput" accept=".mp3,.wav,.ogg,.raw,.webm" hidden />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<div class="album-section">
+  <input type="file" id="albumInput" accept="image/*" hidden />
+  <img src="androidify.png" alt="Album Art" id="albumArt" class="album-art" />
+  <img src="option.png" alt="Edit Album" class="icon" id="editAlbumBtn" />
+</div>
+
+<div class="track-title">
+  <input type="text" id="trackTitle" value="Androidify" />
+</div>
+<img src="option.png" alt="Theme Toggle" class="icon" id="themeToggle" />
+<audio id="audioPlayer" loop autoplay></audio>
