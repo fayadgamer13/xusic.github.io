@@ -1,21 +1,21 @@
-const audio = document.getElementById('audioPlayer');
+const audio = new Audio();
 const playBtn = document.getElementById('playBtn');
 const pauseBtn = document.getElementById('pauseBtn');
-const fileInput = document.getElementById('fileInput');
-const addMusic = document.getElementById('addMusic');
+const musicInput = document.getElementById('musicInput');
+const addMusicBtn = document.getElementById('addMusicBtn');
+const repeatBtn = document.getElementById('repeatBtn');
 const progressDot = document.getElementById('progressDot');
+const editTitleBtn = document.getElementById('editTitleBtn');
+const trackTitle = document.getElementById('trackTitle');
+const albumArt = document.getElementById('albumArt');
+const albumInput = document.getElementById('albumInput');
 
-let isRepeating = false;
-let isAutoplay = false;
+addMusicBtn.onclick = () => musicInput.click();
 
-addMusic.onclick = () => fileInput.click();
-
-fileInput.onchange = (e) => {
+musicInput.onchange = (e) => {
   const file = e.target.files[0];
   if (file) {
-    const url = URL.createObjectURL(file);
-    audio.src = url;
-    audio.load();
+    audio.src = URL.createObjectURL(file);
     audio.play();
     playBtn.classList.add('hidden');
     pauseBtn.classList.remove('hidden');
@@ -34,7 +34,29 @@ pauseBtn.onclick = () => {
   playBtn.classList.remove('hidden');
 };
 
+repeatBtn.onclick = () => {
+  audio.loop = !audio.loop;
+  repeatBtn.style.opacity = audio.loop ? 1 : 0.5;
+};
+
 audio.ontimeupdate = () => {
+  const percent = (audio.currentTime / audio.duration) * 100;
+  progressDot.style.left = `${percent}%`;
+};
+
+editTitleBtn.onclick = () => {
+  const newTitle = prompt("Enter new track title:");
+  if (newTitle) trackTitle.textContent = newTitle;
+};
+
+albumArt.onclick = () => albumInput.click();
+
+albumInput.onchange = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    albumArt.src = URL.createObjectURL(file);
+  }
+};audio.ontimeupdate = () => {
   const percent = (audio.currentTime / audio.duration) * 100;
   progressDot.style.left = `${percent}%`;
 };
