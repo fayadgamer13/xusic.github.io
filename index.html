@@ -7,34 +7,50 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="player-container">
-    <div class="header">
-      <h1>My Music</h1>
-      <img src="add.png" alt="Add" class="icon" id="addMusic" />
+  <div class="background">
+    <div class="title-bar">
+      <h2 id="trackTitle">Androidify</h2>
+      <img src="edit.png" alt="Edit Title" id="editTitleBtn" class="icon" />
     </div>
 
-    <div class="album-art">
-      <img src="androidify.png" alt="Album Art" />
-    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3>My Music</h3>
+        <img src="add.png" alt="Add Music" id="addMusicBtn" class="icon" />
+      </div>
 
-    <div class="controls">
-      <audio id="audioPlayer" controls hidden></audio>
-      <img src="play.png" alt="Play" id="playBtn" class="icon" />
-      <img src="pause.png" alt="Pause" id="pauseBtn" class="icon hidden" />
-      <img src="repeat.png" alt="Repeat" class="icon" id="repeatBtn" />
-      <img src="autoplay.png" alt="Autoplay" class="icon" id="autoplayBtn" />
-      <img src="autotranslate.png" alt="Translate" class="icon" />
-      <img src="option.png" alt="Options" class="icon" />
-    </div>
+      <ul class="card-list">
+        <li>
+          <span>Album Art</span>
+          <img src="androidify.png" alt="Album Art" id="albumArt" class="album-img" />
+        </li>
+        <li>
+          <span>Auto</span>
+          <img src="autoplay.png" alt="Autoplay" class="icon" id="autoplayBtn" />
+        </li>
+        <li>
+          <span>Progress</span>
+          <div class="progress-container">
+            <img src="processbar.png" alt="Progress Bar" />
+            <img src="processdot.png" alt="Dot" id="progressDot" />
+          </div>
+        </li>
+      </ul>
 
-    <div class="progress-bar">
-      <img src="processbar.png" alt="Progress" />
-      <img src="processdot.png" alt="Dot" id="progressDot" />
-    </div>
+      <div class="controls">
+        <img src="play.png" alt="Play" id="playBtn" class="icon" />
+        <img src="pause.png" alt="Pause" id="pauseBtn" class="icon hidden" />
+        <img src="repeat.png" alt="Repeat" id="repeatBtn" class="icon" />
+      </div>
 
-    <input type="file" id="fileInput" accept=".mp3,.wav,.ogg,.raw,.webm" hidden />
+      <input type="file" id="musicInput" accept=".mp3,.wav,.ogg,.raw,.webm" hidden />
+      <input type="file" id="albumInput" accept="image/*" hidden />
+    </div>
   </div>
 
+  <script src="script.js"></script>
+</body>
+</html>
   <script src="script.js"></script>
 </body>
 </html>
