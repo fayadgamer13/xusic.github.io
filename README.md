@@ -1,1 +1,1 @@
-# xusic.github.io
+# XUsic: A music website
